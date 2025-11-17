@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import type { ReactElement } from "react";
+import TransitionProvider from "@/components/transitionProvider";
 
 export const metadata: Metadata = {
   title: "My Portfolio",
   description: "About ANIKET PATRA",
+  icons: {
+    icon: "/aniket.JPG",
+  },
 };
 
 export default function RootLayout({
@@ -14,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <TransitionProvider>{children}</TransitionProvider>
+      </body>
     </html>
   );
 }
