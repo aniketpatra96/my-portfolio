@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@heroui/progress": "^2.2.22",
     "cron": "^4.3.4",
     "framer-motion": "^12.23.24",
     "next": "16.0.3",

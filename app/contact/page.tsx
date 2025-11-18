@@ -2,21 +2,24 @@
 import { motion } from "framer-motion";
 import { FormEvent, ReactElement, RefObject, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { CircularProgress } from "@heroui/progress";
 
 export default function ContactPage(): ReactElement {
   const [success, setSuccess] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const text: string = "Say Hello";
 
   const form: RefObject<HTMLFormElement | null> =
     useRef<HTMLFormElement | null>(null);
 
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(false);
     setSuccess(false);
+    setLoading(true);
 
-    emailjs
+    await emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_SERVICE_ID || "",
         process.env.NEXT_PUBLIC_TEMPLATE_ID || "",
@@ -32,6 +35,7 @@ export default function ContactPage(): ReactElement {
           setError(true);
         }
       );
+    setLoading(false);
   };
 
   return (
@@ -83,9 +87,28 @@ export default function ContactPage(): ReactElement {
             className="bg-transparent border-b-2 border-b-black outline-none"
           />
           <span>Regards</span>
-          <button className="bg-purple-200 rounded font-semibold text-gray-600 p-4">
-            Send
-          </button>
+          {loading ? (
+            <div className="flex items-center gap-4 justify-center">
+              <CircularProgress
+                className="w-16 h-16"
+                aria-label="Loading..."
+                color="primary"
+                size="md"
+              />
+              <div
+                className="w-8 h-8 rounded-full border-4 border-gray-300 border-t-transparent animate-spin"
+                aria-hidden="true"
+              />
+              <span className="text-gray-600 font-medium">Sending…</span>
+            </div>
+          ) : (
+            <button
+              type="submit"
+              className="bg-purple-200 rounded font-semibold text-gray-600 p-4"
+            >
+              Send
+            </button>
+          )}
           {success && (
             <span className="text-green-600 font-semibold">
               Your message has been sent successfully!
