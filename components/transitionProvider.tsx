@@ -1,14 +1,13 @@
 "use client";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./navbar";
-import type { ReactElement } from "react";
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { path } from "framer-motion/client";
 
 export default function TransitionProvider({
   children,
-}: Readonly<{ children: ReactElement }>): ReactElement {
+}: Readonly<{ children: ReactNode }>): ReactNode {
   const pathName: string = usePathname();
   return (
     <AnimatePresence mode="wait">
