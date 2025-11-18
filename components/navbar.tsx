@@ -141,15 +141,18 @@ export default function Navbar(): ReactElement {
             variants={listVariants}
             initial="closed"
             animate="opened"
-            className="z-40 absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl"
+            className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
           >
             {links.map((link: LinkProps) => (
               <motion.div
                 variants={listItemVariants}
+                animate="opened"
+                exit="closed"
                 key={link.title}
-                className=""
               >
-                <Link href={link.url}>{link.title}</Link>
+                <Link href={link.url} onClick={() => setOpen(false)}>
+                  {link.title}
+                </Link>
               </motion.div>
             ))}
           </motion.div>
