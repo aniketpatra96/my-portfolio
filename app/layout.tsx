@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import type { ReactElement } from "react";
+import type { ReactNode } from "react";
 import TransitionProvider from "@/components/transitionProvider";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: ReactElement;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
