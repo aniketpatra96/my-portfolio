@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
     loader: "custom",
     loaderFile: "./loader.ts",
   },
-  output: "export",
   reactStrictMode: true,
 };
 

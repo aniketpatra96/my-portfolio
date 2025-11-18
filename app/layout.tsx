@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import type { ReactNode } from "react";
 import TransitionProvider from "@/components/transitionProvider";
+import job from "@/cron";
 
 export const metadata: Metadata = {
   title: "My Portfolio",
@@ -16,6 +17,7 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
+  job.start();
   return (
     <html lang="en">
       <body>
