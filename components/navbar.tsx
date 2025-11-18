@@ -91,23 +91,23 @@ export default function Navbar(): ReactElement {
       </div>
       {/* SOCIAL LINKS */}
       <div className="hidden md:flex gap-4">
-        <Link href="/">
+        <Link href="https://github.com/aniketpatra96">
           <Image src="/github.png" alt="github" width={24} height={24} />
         </Link>
-        <Link href="/">
-          <Image src="/dribbble.png" alt="github" width={24} height={24} />
+        <Link href="https://dribbble.com/aniket-patra">
+          <Image src="/dribbble.png" alt="dribble" width={24} height={24} />
         </Link>
-        <Link href="/">
-          <Image src="/instagram.png" alt="github" width={24} height={24} />
+        <Link href="https://www.instagram.com/aniketpatra26/">
+          <Image src="/instagram.png" alt="instagram" width={24} height={24} />
         </Link>
-        <Link href="/">
-          <Image src="/facebook.png" alt="github" width={24} height={24} />
+        <Link href="https://www.facebook.com/aniket.patra.96/">
+          <Image src="/facebook.png" alt="facebook" width={24} height={24} />
         </Link>
-        <Link href="/">
-          <Image src="/pinterest.png" alt="github" width={24} height={24} />
+        <Link href="https://in.pinterest.com/aniketpatra12345/">
+          <Image src="/pinterest.png" alt="pinterest" width={24} height={24} />
         </Link>
-        <Link href="/">
-          <Image src="/linkedin.png" alt="github" width={24} height={24} />
+        <Link href="https://www.linkedin.com/in/aniketpatra96/">
+          <Image src="/linkedin.png" alt="linkedin" width={24} height={24} />
         </Link>
       </div>
       {/* RESPONSIVE MENU */}
