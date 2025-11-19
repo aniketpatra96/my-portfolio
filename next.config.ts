@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
     loaderFile: "./loader.ts",
   },
   reactStrictMode: true,
+  allowedDevOrigins: ["192.168.1.35"],
 };
 
 export default nextConfig;

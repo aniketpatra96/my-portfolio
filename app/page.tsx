@@ -11,7 +11,7 @@ export default function Home(): ReactElement {
       animate={{ y: 0 }}
       transition={{ duration: 1 }}
     >
-      <div className="flex flex-col h-full lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <div className="flex overflow-scroll flex-col h-full lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* IMAGE CONTAINER */}
         <div className="h-1/2 lg:h-full lg:w-1/2 relative">
           <Image
@@ -24,7 +24,7 @@ export default function Home(): ReactElement {
         {/* TEXT CONTAINER */}
         <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
           {/* TITLE */}
-          <h1 className="text-4xl font-bold md:text-6xl">
+          <h1 className="text-4xl font-bold md:text-6xl mt-28">
             Crafting Digital Experiences, Designing Tomorrow.
           </h1>
           {/* DESC */}
