@@ -2,8 +2,11 @@
 import Image from "next/image";
 import { type ReactElement } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 export default function Home(): ReactElement {
+  const router: AppRouterInstance = useRouter();
   return (
     <motion.div
       className="h-full"
@@ -38,11 +41,16 @@ export default function Home(): ReactElement {
           <div className="w-full flex gap-4">
             <button
               type="button"
-              className="p-4 rounded-lg ring-1 ring-black bg-black text-white"
+              className="p-4 rounded-lg ring-1 ring-black bg-black text-white cursor-pointer"
+              onClick={() => router.push("/portfolio")}
             >
               View My Work
             </button>
-            <button type="button" className="p-4 rounded-lg ring-1 ring-black">
+            <button
+              type="button"
+              className="p-4 rounded-lg ring-1 ring-black cursor-pointer"
+              onClick={() => router.push("/contact")}
+            >
               Contact Me
             </button>
           </div>
